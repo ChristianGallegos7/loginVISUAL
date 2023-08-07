@@ -33,7 +33,7 @@
 
 <body>
 
-    <header id="header" class=" d-flex align-items-center">
+    <%--<header id="header" class=" d-flex align-items-center">
         <div class="container d-flex align-items-center">
 
             <div class="logo me-auto">
@@ -80,7 +80,7 @@
             </div>
 
         </div>
-    </header>
+    </header>--%>
 
 
     <!-- End Header -->

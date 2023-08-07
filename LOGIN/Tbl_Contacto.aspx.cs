@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data;
 using System.Data.SqlClient;
+using System.Web.UI.WebControls;
 
 namespace LOGIN
 {
@@ -14,8 +15,11 @@ namespace LOGIN
         //VERDEZOTO2
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
 
-            mostrar_contacto();
+                mostrar_contacto();
+            }
         }
 
         private void mostrar_contacto()
@@ -83,6 +87,25 @@ namespace LOGIN
         protected void btn_seleccione_Click(object sender, EventArgs e)
         {
 
+
+        }
+
+        protected void btn_seleccionee_Click(object sender, EventArgs e)
+        {
+            int con_id = 0;
+            if (sender is Button)
+            {
+                GridViewRow row = ((Button)sender).NamingContainer as GridViewRow;
+                if (row != null)
+                {
+                    HiddenField1.Value = row.Cells[0].Text;
+                    txt_nom.Text = row.Cells[1].Text;
+                    txt_dir.Text = row.Cells[2].Text;
+                    txt_tel.Text = row.Cells[3].Text;
+                    Calendar1.SelectedDate = Convert.ToDateTime(row.Cells[4].Text);
+                }
+            }
+            btn_guarda.Text = "Actualizar";
         }
     }
 }

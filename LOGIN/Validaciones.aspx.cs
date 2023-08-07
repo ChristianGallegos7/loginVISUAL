@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace LOGIN
 {
@@ -11,7 +6,12 @@ namespace LOGIN
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
+                txt_sololetra.Attributes.Add("onkeypress", "javascript:return no_letras(event);");
+                txt_solonumeros.Attributes.Add("onkeypress", "javascript:return no_numeros(event);");
 
+            }
         }
     }
 }

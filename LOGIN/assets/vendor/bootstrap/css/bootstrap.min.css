@@ -404,7 +404,8 @@ img, svg {
 table {
     caption-side: bottom;
     border-collapse: collapse;
-    width: 310px;
+    margin-left: 2px;
+    margin-top: 0px;
 }
 
 caption {
@@ -8247,7 +8248,6 @@ textarea.form-control-lg {
 }
 
 .h-auto {
-    height: auto !important
 }
 
 .mh-100 {

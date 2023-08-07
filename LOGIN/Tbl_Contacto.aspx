@@ -21,12 +21,12 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cph_mensaje" runat="server">
     <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
-    <asp:HiddenField ID="HiddenField1" runat="server" />
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="cph_contenido" runat="server">
 
     <asp:UpdatePanel ID="UpdatePanel1" runat="server">
         <ContentTemplate>
+            <asp:HiddenField ID="HiddenField1" runat="server" />
             <table class="table w-95 table-bordered table-info">
                 <tr>
                     <td>
@@ -75,7 +75,6 @@
                                     <asp:Button ID="btn_edita" runat="server" Text="Editar" class="mx-2 btn btn-primary btn-lg" OnClick="btn_edita_Click" />
                                     <asp:Button ID="btn_elimina" runat="server" Text="Eliminar" class="mx-2 btn btn-danger btn-lg" OnClick="btn_elimina_Click" />
                                 </td>
-
                             </tr>
 
                             <tr class="w-100">
@@ -97,7 +96,7 @@
                                 <asp:BoundField DataField="con_fechaN" HeaderText="Fecha" />
                                 <asp:TemplateField HeaderText="Accion">
                                     <ItemTemplate>
-                                        <asp:Button runat="server" CssClass="btn btn-info" Text="Seleccione" ID="btn_seleccione" OnClick="btn_seleccione_Click" />
+                                        <asp:Button runat="server" CssClass="btn btn-info" Text="Seleccione" ID="btn_seleccionee" OnClick="btn_seleccionee_Click" />
                                     </ItemTemplate>
                                 </asp:TemplateField>
                             </Columns>
@@ -115,9 +114,12 @@
             </table>
 
         </ContentTemplate>
-
+        <Triggers>
+            <asp:AsyncPostBackTrigger ControlID="btn_guarda" EventName="Click" />
+            <asp:AsyncPostBackTrigger ControlID="btn_edita" EventName="Click" />
+            <asp:AsyncPostBackTrigger ControlID="btn_elimina" EventName="Click" />
+        </Triggers>
     </asp:UpdatePanel>
-
 
     <script>
         window.addEventListener('DOMContentLoaded', () => {
